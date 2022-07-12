@@ -4,7 +4,7 @@
    box-sizing: border-box;
 }
 a {
-   color: gray;
+   color: rgb(15, 34, 239);
    font-size: 25px;
    text-decoration: none;
 }
@@ -19,22 +19,22 @@ body{
 .wrapper {
    width: 100vw;
    height: 100vh;  
-  padding: 20px;
+  /* padding: 20px; */
 }
 .conteiner{
    margin: 0 auto;
-   width: 800px;
-   min-width: 800px;  
+   width: 310px;
+   min-width: 320px;  
    padding: 0 15px;
    
 }
 h1{
-   font-size: 40px;
+   font-size: 30px;
    margin-bottom: 10px;
    word-wrap: break-word;  
 }
 h2 {
-   font-size: 30px;
+   font-size: 25px;
    margin-bottom: 10px;
    color: red;
 } 
@@ -47,8 +47,8 @@ h2 {
    margin: 10px 0;
    position: relative;
 }
-.icon {
-   width: 20px;
+.icon {   
+   fill:  rgb(15, 34, 239);
 }
 
 .phone {
@@ -70,3 +70,4 @@ ol li {
 .ol *  {
 margin-bottom: 15px;
 }
+
