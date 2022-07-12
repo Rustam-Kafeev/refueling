@@ -23,10 +23,16 @@ body{
 }
 .conteiner{
    margin: 0 auto;
-   width: 310px;
-   min-width: 320px;  
+   width: 800px;
+   max-width: 800px;  
    padding: 0 15px;
    
+}
+@media (max-width:400px) {
+   .conteiner {
+      width: 310px;
+      min-width: 320px;
+   }
 }
 h1{
    font-size: 30px;
@@ -71,3 +77,6 @@ ol li {
 margin-bottom: 15px;
 }
 
+.reviews {
+  padding-bottom: 20px;
+}
