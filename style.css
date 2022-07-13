@@ -19,7 +19,8 @@ body{
 .wrapper {
    width: 100vw;
    height: 100vh;  
-  /* padding: 20px; */
+   
+  
 }
 .conteiner{
    margin: 0 auto;
@@ -79,4 +80,17 @@ margin-bottom: 15px;
 
 .reviews {
   padding-bottom: 20px;
+}
+
+iframe {
+   width: 600px;
+   height: 450px;
+  
+}
+
+@media (max-width: 400px) {
+   iframe {
+      width: 300px;
+      height: 250px;
+   }
 }
