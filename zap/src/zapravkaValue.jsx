@@ -1,12 +1,11 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 
 class ZapravkaValue extends React.Component {
    constructor(props) {
       super(props)
       this.state = {
          input: '',
-         sum: 0
+         sum: 'Итого :'
       }
       this.handleChange = this.handleChange.bind(this)
       this.submitClick = this.submitClick.bind(this)
@@ -90,6 +89,4 @@ class ZapravkaValue extends React.Component {
       )
    }
 }
-
-const root = ReactDom.createRoot(document.getElementById('root'))
-root.render(<ZapravkaValue/>)
+export default ZapravkaValue
