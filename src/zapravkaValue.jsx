@@ -11,8 +11,8 @@ class ZapravkaValue extends React.Component {
       this.handleChange = this.handleChange.bind(this)
       this.submitClick = this.submitClick.bind(this)
       this.clearInput = this.clearInput.bind(this)
-     this.handleEnter = this.handleEnter.bind(this)
-     this.handleKeyPress = this.handleKeyPress.bind(this)
+      this.handleEnter = this.handleEnter.bind(this)
+      this.handleKeyPress = this.handleKeyPress.bind(this)
    }
    handleChange(e) {
       this.setState({
@@ -20,10 +20,10 @@ class ZapravkaValue extends React.Component {
       })
    }
 
-   clearInput(){
-this.setState({
-   input: ""
-})
+   clearInput() {
+      this.setState({
+         input: ""
+      })
    }
    submitClick() {
       this.setState(state => {
@@ -42,11 +42,14 @@ this.setState({
          }
       })
    }
+
    componentDidMount() {
-      document.addEventListener("keydown", this.handleKeyPress)
+      const input = document.querySelector('input')
+      input.addEventListener("keydown", this.handleKeyPress)
    }
    componentWillUnmount() {
-      document.removeEventListener("keydown", this.handleKeyPress)
+      const input = document.querySelector('input')
+      input.removeEventListener("keydown", this.handleKeyPress)
    }
    handleEnter() {
       this.submitClick()
@@ -54,10 +57,8 @@ this.setState({
    handleKeyPress(event) {
       if (event.keyCode === 13) {
          this.handleEnter()
-      } else if (event.keyCode === 27){
-this.clearInput()
-      }  else {
-         console.log(event.keyCode)
+      } else if (event.keyCode === 27) {
+         this.clearInput()
       }
    }
    render() {
@@ -81,16 +82,24 @@ this.clearInput()
             <h2 style={{
                fontSize: 20
             }}>Расчет стоимости заправки </h2>
-            <input className='input'              
+            <input
+               tabIndex={2}
+               className='input'
                type="number"
                value={this.state.input}
-               onChange={this.handleChange}               
+               onChange={this.handleChange}
                placeholder="Впишите объем фреона в граммах" />
-               <button onClick={this.clearInput} style={{padding:2, marginLeft: 5}}>обнулить</button>
+            <button
+               tabIndex={3}
+               onClick={this.clearInput} style={{ padding: 4, marginLeft: 5 }}>
+               обнулить
+            </button>
             <br />
-            <button className='btn'
-               style={{                  
-                  padding: 5,                  
+            <button
+               tabIndex={4}
+               className='btn'
+               style={{
+                  padding: 5,
                   color: "#fff",
                   fontSize: 20,
                   marginBottom: 10
