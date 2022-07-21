@@ -86,9 +86,10 @@ margin-bottom: 15px;
    cursor: pointer;
    width: 300px;
    border-radius: 5px;
+   background: rgb(217 33 33);
 }
 .btn:hover {
-   background-color: rgb(173, 87, 87);
+   background-color: rgb(229, 61, 61);
 }
 .phone-now{
    display: inline-block;

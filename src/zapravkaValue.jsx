@@ -67,8 +67,7 @@ class ZapravkaValue extends React.Component {
             <br />
             <button className='btn'
                style={{                  
-                  padding: 5,
-                  background: "rgb(217 33 33)",
+                  padding: 5,                  
                   color: "#fff",
                   fontSize: 20,
                   marginBottom: 10
