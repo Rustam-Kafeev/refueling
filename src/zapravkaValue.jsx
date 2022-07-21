@@ -23,7 +23,7 @@ class ZapravkaValue extends React.Component {
       this.setState(state => {
          if (this.state.input > 500) {
             return {
-               sum: `Итого : ${this.state.input * 2 + 200} рублей`
+               sum: `Итого : ${this.state.input * 2 + 200} рублей!`
             }
          } else if (this.state.input < 1) {
             return {
