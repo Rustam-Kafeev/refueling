@@ -74,7 +74,7 @@ class ZapravkaValue extends React.Component {
                   marginBottom: 10
                }}
                onClick={this.submitClick}>
-               Получить результат
+               Посчитать
             </button>
             <br />
             <h2 style={h2Style}>
