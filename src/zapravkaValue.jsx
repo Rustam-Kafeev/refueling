@@ -10,7 +10,9 @@ class ZapravkaValue extends React.Component {
       }
       this.handleChange = this.handleChange.bind(this)
       this.submitClick = this.submitClick.bind(this)
-
+      this.clearInput = this.clearInput.bind(this)
+     this.handleEnter = this.handleEnter.bind(this)
+     this.handleKeyPress = this.handleKeyPress.bind(this)
    }
    handleChange(e) {
       this.setState({
@@ -18,7 +20,11 @@ class ZapravkaValue extends React.Component {
       })
    }
 
-
+   clearInput(){
+this.setState({
+   input: ""
+})
+   }
    submitClick() {
       this.setState(state => {
          if (this.state.input > 500) {
@@ -36,7 +42,24 @@ class ZapravkaValue extends React.Component {
          }
       })
    }
-
+   componentDidMount() {
+      document.addEventListener("keydown", this.handleKeyPress)
+   }
+   componentWillUnmount() {
+      document.removeEventListener("keydown", this.handleKeyPress)
+   }
+   handleEnter() {
+      this.submitClick()
+   }
+   handleKeyPress(event) {
+      if (event.keyCode === 13) {
+         this.handleEnter()
+      } else if (event.keyCode === 27){
+this.clearInput()
+      }  else {
+         console.log(event.keyCode)
+      }
+   }
    render() {
       let h2Style = {
          fontSize: 16,
@@ -58,12 +81,12 @@ class ZapravkaValue extends React.Component {
             <h2 style={{
                fontSize: 20
             }}>Расчет стоимости заправки </h2>
-            <input className='input'
-               
+            <input className='input'              
                type="number"
                value={this.state.input}
-               onChange={this.handleChange}
+               onChange={this.handleChange}               
                placeholder="Впишите объем фреона в граммах" />
+               <button onClick={this.clearInput} style={{padding:2, marginLeft: 5}}>обнулить</button>
             <br />
             <button className='btn'
                style={{                  
@@ -75,6 +98,7 @@ class ZapravkaValue extends React.Component {
                onClick={this.submitClick}>
                Посчитать
             </button>
+
             <br />
             <h2 style={h2Style}>
                {this.state.sum}
