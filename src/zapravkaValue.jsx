@@ -1,4 +1,5 @@
 import React from 'react';
+import "./styles/style.css"
 
 class ZapravkaValue extends React.Component {
    constructor(props) {
@@ -53,25 +54,19 @@ class ZapravkaValue extends React.Component {
          }
       }
       return (
-         <div style={{ padding: 10 }}
-         >
+         <div >
             <h2 style={{
                fontSize: 20
             }}>Расчет стоимости заправки </h2>
-            <input
-               style={{
-                  width: 300,
-                  marginBottom: 10,
-                  padding: 5
-               }}
+            <input className='input'
+               
                type="number"
                value={this.state.input}
                onChange={this.handleChange}
                placeholder="Впишите объем фреона в граммах" />
             <br />
-            <button
-               style={{
-                  width: 300,
+            <button className='btn'
+               style={{                  
                   padding: 5,
                   background: "rgb(217 33 33)",
                   color: "#fff",
