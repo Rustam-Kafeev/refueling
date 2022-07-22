@@ -29,7 +29,7 @@ class ZapravkaValue extends React.Component {
       this.setState(state => {
          if (/\D+/.test(this.state.input)) {
             return {
-               sum: "Только числа"
+               sum: "Только числа больше 0"
             }
          }
          if (this.state.input > 500) {
