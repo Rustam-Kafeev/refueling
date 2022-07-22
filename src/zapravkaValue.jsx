@@ -27,6 +27,11 @@ class ZapravkaValue extends React.Component {
    }
    submitClick() {
       this.setState(state => {
+         if (/\D+/.test(this.state.input)) {
+            return {
+               sum: "Только числа"
+            }
+         }
          if (this.state.input > 500) {
             return {
                sum: `Итого : ${this.state.input * 2 + 200} рублей!`
@@ -40,6 +45,7 @@ class ZapravkaValue extends React.Component {
                sum: "Минимальная стомость заправки 1200 рублей!"
             }
          }
+
       })
    }
 
@@ -66,6 +72,7 @@ class ZapravkaValue extends React.Component {
          fontSize: 16,
          color: "blue"
       }
+
       if (this.state.input < 1) {
          h2Style = {
             fontSize: 16,
