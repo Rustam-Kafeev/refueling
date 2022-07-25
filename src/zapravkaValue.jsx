@@ -1,4 +1,5 @@
 import React from 'react';
+import Footer from './component/footer';
 import Time from './component/time';
 import "./styles/style.css"
 
@@ -121,6 +122,7 @@ class ZapravkaValue extends React.Component {
             <h2 style={h2Style}>
                {this.state.sum}
             </h2>
+            <Footer/>
          </div>
       )
    }
