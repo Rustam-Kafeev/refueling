@@ -1,9 +1,11 @@
 import React from 'react';
-import Footer from './component/footer';
-import Time from './component/time';
+import Footer from './component/Footer';
+import Header from './component/Header';
+import Main from './component/Main';
+import Counter from './component/Counter';
 import "./styles/style.css"
 
-class ZapravkaValue extends React.Component {
+class App extends React.Component {
    constructor(props) {
       super(props)
       this.state = {
@@ -70,61 +72,21 @@ class ZapravkaValue extends React.Component {
       }
    }
    render() {
-      let h2Style = {
-         fontSize: 16,
-         color: "blue"
-      }
-
-      if (this.state.input < 1) {
-         h2Style = {
-            fontSize: 16,
-            color: "red"
-         }
-      } else if (this.state.input > 500) {
-         h2Style = {
-            fontSize: 16,
-            color: "green"
-         }
-      }
+      
       return (
-         <div >
-            <h2 style={{
-               fontSize: 20
-            }}>Расчет стоимости заправки </h2>
-            <input
-               tabIndex={2}
-               className='input'
-               type="number"
-               value={this.state.input}
-               onChange={this.handleChange}
-               placeholder="Впишите объем фреона в граммах" />
-            <button
-               tabIndex={3}
-               onClick={this.clearInput} style={{ padding: 4, marginLeft: 5 }}>
-               обнулить
-            </button>
-            <br />
-            <button
-               tabIndex={4}
-               className='btn'
-               style={{
-                  padding: 5,
-                  color: "#fff",
-                  fontSize: 20,
-                  marginBottom: 10
-               }}
-               onClick={this.submitClick}>
-               Посчитать
-            </button>
-
-            <br />
-            <Time />
-            <h2 style={h2Style}>
-               {this.state.sum}
-            </h2>
+         <div className='conteiner'>
+            <Header />
+          <div className='flex'>
+               <Main />
+               <Counter handleChange={this.handleChange} 
+               input={this.state.input} 
+               clearInput={this.clearInput} 
+               submitClick={this.submitClick} 
+               sum={this.state.sum}/> 
+          </div>        
             <Footer/>
          </div>
       )
    }
 }
-export default ZapravkaValue
+export default App
