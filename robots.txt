@@ -1,0 +1,7 @@
+User-agent: *
+Disallow:
+
+User-agent: YandexBot
+Disallow:
+Host: https://carconditioners.vercel.app/
+Sitemap: https://carconditioners.vercel.app/satimap.xml
